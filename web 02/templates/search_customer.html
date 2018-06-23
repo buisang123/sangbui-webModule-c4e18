@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mùa đông không lạnh</title>
+</head>
+<body>
+    <h1>search khách hàng</h1>
+    {%for customer in all_customer%}
+        <div>
+            {%if service.gender == 1 %}
+            <img src="../static/image/male-profile.jpg" alt="">
+            {%endif%}
+            <p>tên:{{customer.name}}</p>
+            <p>giới tính:{{customer.gender}}</p>
+            <p>địa chỉ:{{customer.address}}</p>
+            <p>chiều cao:{{customer.hight}}</p>
+            <p>số điện thoại:{{customer.phone}}</p>
+            <p>tuổi:{{customer.yob}}</p>
+            <p>nghề nghiệp:{{customer.job}}</p>
+        </div>
+    {%endfor%}
+</body>
+</html>
