@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mùa Đông Không lạnh</title>
+</head>
+<body>
+    <h1>search</h1>
+    {% for service in all_service2 %}
+    <div>
+            {%if service.gender == 0 %}
+        <img src="../static/image/female-profile.jpg" alt="">
+        {% else %}
+            <img src="../static/image/male-profile.jpg" alt="">
+        {% endif %}
+        
+        <p>{{service.name}}</p>
+        <p>{{service.yob}}</p>
+        <p>{{service.height}}</p>
+        <a href="{{url_for("details",service_id=service.id)}}">chi tiết</a>
+        <hr>
+    </div>
+    {% endfor %}
+</body>
+</html>

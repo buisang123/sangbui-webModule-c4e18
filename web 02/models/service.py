@@ -20,3 +20,4 @@ class Service(Document):
 #     status=True
 # )
 # new_service.save()
+db.Service.remove(Document)
