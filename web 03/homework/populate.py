@@ -3,13 +3,14 @@ import mlab
 mlab.connect()
 
 new_service = Service(
-    name="Tuấn Tiền Tỉ",
-    yob=1993,
+    image="https://genknews.genkcdn.vn/2017/photo-4-1490609870810.jpg",
+    name="Linh Ngọc Đàm",
+    yob=1995,
     height=166,
-    gender=1,
-    phone="0912312783",
+    gender=0,
+    phone="0928347563",
     address="Hà Nội",
-    description=["tốt bụng","hài hước","diễn sâu"],
+    description=["xinh gái","cute","ngoan hiền"],
     measurements=[80,70,80],
     status=True
 )

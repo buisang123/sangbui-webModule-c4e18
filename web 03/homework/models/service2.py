@@ -1,6 +1,7 @@
 from mongoengine import*
 
 class Service(Document):
+    image=StringField()
     name= StringField()
     yob=IntField()
     height=IntField()

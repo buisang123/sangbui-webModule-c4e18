@@ -46,7 +46,31 @@ def add():
 
         return redirect(url_for('route'))
 
+@app.route('/search')
+def search():
+    return render_template("search.html")
 
+
+@app.route('/update/<service_id>', methods=['GET','POST'])
+def update(service_id):
+    if request.method == 'GET':
+        service_up = Service.objects().with_id(service_id)
+        return render_template("update.html",service_up=service_up)
+    elif request.method == 'POST':
+        form = request.form
+        service_up = Service.objects().with_id(service_id)
+        service_up.update(
+
+            name = form["name"],
+            yob = form["yob"],
+            address = form["address"]
+            
+
+        )
+        
+        service_up.reload()
+        return redirect(url_for("route"))
+    
 
 if __name__ == '__main__':
   app.run(debug=True)
