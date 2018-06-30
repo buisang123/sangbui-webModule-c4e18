@@ -11,3 +11,4 @@ class Service(Document):
     description=ListField()
     measurements=ListField()
     status=BooleanField()
+   

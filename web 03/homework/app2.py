@@ -1,8 +1,10 @@
 from flask import *
 import mlab
 from models.service2 import Service
+from models.ures import User
+from models.order import Order
 app = Flask(__name__)
-
+app.secret_key="a super key"
 
 mlab.connect()
 
@@ -63,13 +65,67 @@ def update(service_id):
 
             name = form["name"],
             yob = form["yob"],
-            address = form["address"]
-            
-
-        )
+            address = form["address"]        )
         
         service_up.reload()
         return redirect(url_for("route"))
+
+@app.route("/login",methods = ["GET","POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    elif request.method == 'POST':
+        form = request.form
+        name_login_in = form["name_login_in"]
+        password = form["password"]
+        account = User.objects().get(name_login_in=name_login_in)
+        account_pass = account["password"]
+        if account_pass == password:
+            session["loggedin"]=True
+            session["name_login_in"] = name_login_in
+            return redirect(url_for("details",service_id=service.id))
+    else:
+        return "Inconrect"
+
+@app.route('/loginin' ,methods = ['GET','POST'])
+def lodin_in():
+    if request.method == "GET":
+        return render_template("loginin.html")
+    elif request.method == 'POST':
+        form = request.form
+        fullname = form["fullname"]
+        email = form["email"]
+        name_login_in = form["name_login_in"]
+        password = form["password"]
+
+        user = User(
+            fullname=fullname,
+            email=email,
+            name_login_in=name_login_in,
+            password=password
+        )
+
+        user.save()
+        return redirect(url_for("login"))
+
+@app.route('/logout')
+def logout():
+    del session["loggedin"]
+    return redirect(url_for("index"))
+
+@app.route('/order/<service_id>')
+def order(service_id):
+    new_order = Order(
+        service_id = service_id,
+        time=time,
+        accepted=accepted,
+        user_id=user_id
+    )
+    new_order.save()
+    return "sent"
+
+
+            
     
 
 if __name__ == '__main__':
