@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.box-model{
+    padding:  30px;
+    margin: 0 auto;
+}
+.h-500px{
+    height: 500px;
+}
+div#background-ele{
+    height: 500px;
+    width: 100%;
+    background-image: url("http://techkids.vn/images/Background.jpg");
+    background-size:cover;
+}
+.flex-box{
+    display:flex;
+    justify-content:center;
+}
+
+.h-400px{
+    height:400px ;
+}
+
+.w-20{
+    width: 20%;
+}
+.h-250px{
+    height: 250px;
+}
+.white{
+    color: white;
+}
+.flex{
+    display: flex;
+
+}
+.box{
+    flex:1;
+    text-align: center;
+}
+.content{
+    margin-top: 80px;
+}
+.box img{
+    max-width: 60%;
+    height: auto;
+    border-radius: 50%;
+
+}
+.gach{
+    
+    margin: 25px auto;
+    border-top: 1px solid white;
+    width: 70%;
+   
+}
