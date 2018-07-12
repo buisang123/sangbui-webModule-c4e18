@@ -1,0 +1,30 @@
+#center{
+    justify-content: center;
+    left: 90px;
+}
+.h-500px {
+    height: 500px;
+}
+
+.h-15 {
+    height: 15%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100px {
+    height: 100px;
+}
+.text-right {
+    text-align: right!important;
+    left: 182px;
+    right: 238px;
+}
+/* .h-300px{
+    height: 300px;
+}
+.w-80{
+    width: 80%;
+} */
